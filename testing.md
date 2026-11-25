@@ -196,7 +196,7 @@ $serviceName = "ssh-tunnel-multi"
 # 安装服务（密钥如果是使用自定义的名称，则需要使用 -i 参数进行实际位置的指定）
 & $nssm install $serviceName `
     "C:\Windows\System32\OpenSSH\ssh.exe" `
-    "-N -D 1080 -L 3080:127.0.0.1:3080 -L 2200:127.0.0.1:22 -i C:\Users\user\.ssh\dsh_yuxi_sshkey -o ServerAliveInterval=30 -o ExitOnForwardFailure=yes user@192.168.40.148"
+    "-N -D 1080 -i C:\Users\user\.ssh\dsh_yuxi_sshkey -o ServerAliveInterval=30 -o ExitOnForwardFailure=yes user@192.168.40.148"
 
 # 工作目录
 & $nssm set $serviceName AppDirectory "C:\Users\user"
